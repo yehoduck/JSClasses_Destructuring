@@ -45,3 +45,32 @@ const user = {
        ]
    }
 };
+
+// Деструктуризація
+const {
+    age,
+    address: {
+        city,
+        coordinates: { latitude }
+    },
+    contacts: {
+        email: userEmail
+    },
+    hobbies: [, secondHobbie],
+    education: {
+        university
+    },
+    family: {
+        children: [
+            { name: firstChildName }
+        ]
+    }
+} = user
+
+console.log(age)
+console.log(university)
+console.log(city)
+console.log(latitude)
+console.log(userEmail)
+console.log(secondHobbie)
+console.log(firstChildName)
