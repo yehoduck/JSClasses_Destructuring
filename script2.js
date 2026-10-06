@@ -8,7 +8,7 @@ class Post {
         this.likes_amount = likes_amount;
     }
     changeText(newText) {
-        this.text = newText
+        this.text = `Edited: ${newText}`
     }
     plusLike() {
         this.likes_amount++
@@ -38,3 +38,28 @@ const post = new Post(
     15
 );
 console.log(post)
+post.changeText("Finished reading it yesterday. Pretty good book");
+console.log(post.text)
+
+console.group("Likes changes check")
+console.log(post.likes) // 15
+post.plusLike();
+console.log(post.likes) // 16
+post.minusLike()
+console.log(post.likes) // 15
+post.likes = 20;
+console.log(post.likes); 
+console.groupEnd()
+
+console.group("Validation check")
+try {
+    post.likes = -5
+} catch (err) {
+    console.log(err)
+}
+try {
+    post.likes = "10"
+} catch (err) {
+    console.log(err)
+}
+console.groupEnd()
