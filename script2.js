@@ -29,3 +29,12 @@ class Post {
         return this.likes_amount
     }
 }
+const post = new Post(
+    1,
+    "Book discussion",
+    "Jane Doe",
+    "Reading «The Dunwich Horror» rn, what about yall?",
+    "04.10.2026",
+    15
+);
+console.log(post)
